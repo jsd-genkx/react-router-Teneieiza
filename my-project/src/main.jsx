@@ -10,6 +10,11 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 import Products from './pages/Products';
 import ProductList from './pages/ProductList';
+import Profile from '../src/pages/Profile/Profile';
+import Profileinfo from '../src/pages/Profile/Profileinfo';
+import Userprofile from '../src/pages/Profile/Userprofile';
+import Orderlist from '../src/pages/Profile/Orderlist';
+import Setting from '../src/pages/Profile/Setting';
 
 const router = createBrowserRouter([
   {
@@ -31,6 +36,27 @@ const router = createBrowserRouter([
   {
     path: "/products/:id",
     element: <ProductList />
+  },
+  {
+    path: "/profile",
+    element: <Profile />,
+    children: [
+      {
+      path: "userprofile",
+      element: <Userprofile/>
+    },
+    {
+      path: "profileinfo",
+      element: <Profileinfo/>
+    },
+    {
+      path: "orderlist",
+      element: <Orderlist/>
+    },
+    {
+      path: "setting",
+      element: <Setting/>
+    }]
   },
 ]);
 
